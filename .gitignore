@@ -1,0 +1,10 @@
+node_modules/
+.idea/
+.vscode/
+build/
+.DS_Store
+npm-debug.log*
+.tern-project
+.tags
+.ctags
+.env
