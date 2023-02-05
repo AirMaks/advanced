@@ -4,13 +4,13 @@ import { AboutPageAsync } from './pages/AboutPage/AboutPage.async';
 import { MainPageAsync } from './pages/MainPage/MainPage.async';
 import { Suspense } from 'react';
 import { useTheme } from './theme/useTheme';
-
+import { classNames as cn } from './helpers/classnames';
 
 const App = () => {
     const {theme, toggleTheme} = useTheme();
 
     return (
-        <div className={`app ${theme}`}>
+        <div className={cn("app", {}, [theme])}>
             <button onClick={toggleTheme}>Theme</button>
             <Link to="/">Главная</Link>
             <Link to="/about">О приложении</Link>
