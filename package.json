@@ -4,9 +4,25 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "webpack serve --env port:3000",
+    "start": "NODE_ENV=development webpack serve --env port:3000",
     "build:prod": "webpack --env mode=production",
     "build:dev": "webpack --env mode=development"
+  },
+  "browserslist": {
+    "production": [
+      "> 0.3%",
+      "last 3 versions",
+      "Android >= 4", 
+      "Firefox >= 20", 
+      "iOS >= 8",
+      "ie >= 9"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version",
+      "last 1 ie version"
+    ]
   },
   "keywords": [],
   "author": "",
@@ -18,10 +34,12 @@
     "@types/react-router-dom": "^5.3.3",
     "@types/webpack": "^5.28.0",
     "@types/webpack-dev-server": "^4.7.2",
+    "autoprefixer": "^10.4.13",
     "css-loader": "^6.6.0",
     "css-minimizer-webpack-plugin": "^4.2.2",
     "html-webpack-plugin": "^5.5.0",
     "mini-css-extract-plugin": "^2.5.3",
+    "postcss-loader": "^7.0.2",
     "sass": "^1.49.9",
     "sass-loader": "^12.6.0",
     "style-loader": "^3.3.1",
