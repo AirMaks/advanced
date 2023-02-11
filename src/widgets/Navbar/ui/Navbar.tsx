@@ -1,16 +1,17 @@
-import { classNames as cn } from "shared/lib/classNames/classNames";
+import { cn } from "shared/lib/classNames/classNames";
 import cls from "./Navbar.module.scss";
 import { AppLink } from "shared/ui/AppLink/AppLink";
+import { ThemeSwitcher } from "widgets/ThemeSwitcher";
 
 
 interface NavbarProps {
     className?: string,
     toggleTheme: () => void
 }
-export const Navbar = ({ className, toggleTheme }: NavbarProps) => {
+export const Navbar = ({ className }: NavbarProps) => {
     return (
         <div className={cn(cls.Navbar, {}, [className])}>
-            <button onClick={toggleTheme}>Цвет темы</button>
+            <ThemeSwitcher />
             <AppLink to="/" className={cls.mainLink}>Главная</AppLink>
             <AppLink to="/about">О приложении</AppLink>
         </div>
