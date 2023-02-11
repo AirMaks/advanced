@@ -2,7 +2,8 @@ module.exports = {
     env: {
         browser: true,
         node: true,
-        es6: true
+        es6: true,
+        jest: true
     },
     extends: ["plugin:react/recommended", "plugin:react/jsx-runtime", "standard", "eslint:recommended", "prettier"],
     parser: "@typescript-eslint/parser",
