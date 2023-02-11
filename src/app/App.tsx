@@ -3,6 +3,7 @@ import { cn } from "shared/lib/classNames/classNames";
 import { useTheme } from 'app/providers/ThemeProvider';
 import { AppRouter } from './providers/router';
 import { Navbar } from 'widgets/Navbar';
+import { Sidebar } from "widgets/Sidebar/ui";
 
 
 const App = () => {
@@ -11,7 +12,10 @@ const App = () => {
     return (
         <div className={cn("app", {}, [theme])}>
             <Navbar toggleTheme={toggleTheme} />
-            <AppRouter />
+            <div className="content-page">
+                <Sidebar />
+                <AppRouter />
+            </div>
         </div>
     );
 };
