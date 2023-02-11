@@ -1,9 +1,8 @@
-
-export type BuildMode =  "production" | "development";
+export type BuildMode = "production" | "development";
 
 export interface BuildPaths {
     entry: {
-        bundle: string
+        bundle: string;
     };
     build: string;
     html: string;
