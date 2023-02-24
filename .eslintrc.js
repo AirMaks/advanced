@@ -5,12 +5,14 @@ module.exports = {
         es6: true,
         jest: true
     },
-    extends: ["plugin:react/recommended", "plugin:react/jsx-runtime", "standard", "eslint:recommended", "prettier"],
+    extends: ["plugin:react/recommended", "plugin:react/jsx-runtime", "standard", "eslint:recommended", "prettier", "plugin:storybook/recommended"],
     parser: "@typescript-eslint/parser",
     parserOptions: {
         ecmaVersion: "latest",
         sourceType: "module",
-        ecmaFeatures: { jsx: true }
+        ecmaFeatures: {
+            jsx: true
+        }
     },
     globals: {
         JSX: true,
@@ -41,7 +43,13 @@ module.exports = {
                 trailingComma: "none"
             }
         ],
-        quotes: [2, "double", { avoidEscape: true }],
+        quotes: [
+            2,
+            "double",
+            {
+                avoidEscape: true
+            }
+        ],
         "arrow-parens": ["error", "as-needed"],
         "space-before-function-paren": [
             "error",
@@ -51,13 +59,31 @@ module.exports = {
                 asyncArrow: "always"
             }
         ],
+        "react/no-unescaped-entities": 0,
         semi: [2, "always"],
         "comma-dangle": 0,
         "react/jsx-indent": ["error", 4],
         "no-use-before-define": "off",
-        "@typescript-eslint/no-use-before-define": ["error", { functions: false, classes: false, variables: false }],
-        "@typescript-eslint/no-unused-vars": [2, { args: "none" }],
-        "react/jsx-filename-extension": [2, { extensions: [".js", ".jsx", ".ts", ".tsx"] }],
+        "@typescript-eslint/no-use-before-define": [
+            "error",
+            {
+                functions: false,
+                classes: false,
+                variables: false
+            }
+        ],
+        "@typescript-eslint/no-unused-vars": [
+            2,
+            {
+                args: "none"
+            }
+        ],
+        "react/jsx-filename-extension": [
+            2,
+            {
+                extensions: [".js", ".jsx", ".ts", ".tsx"]
+            }
+        ],
         "no-restricted-imports": [
             "error",
             {
@@ -70,7 +96,12 @@ module.exports = {
                 ]
             }
         ],
-        "react/display-name": [0, { ignoreTranspilerName: true }]
+        "react/display-name": [
+            0,
+            {
+                ignoreTranspilerName: true
+            }
+        ]
     },
     ignorePatterns: ["node_modules"]
 };
