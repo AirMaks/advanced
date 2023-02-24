@@ -42,6 +42,7 @@ module.exports = {
             }
         ],
         quotes: [2, "double", { avoidEscape: true }],
+        "arrow-parens": ["error", "as-needed"],
         "space-before-function-paren": [
             "error",
             {
