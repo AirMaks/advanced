@@ -28,7 +28,7 @@ module.exports = {
             version: "17.x"
         }
     },
-    plugins: ["react", "@typescript-eslint", "prettier"],
+    plugins: ["react", "@typescript-eslint", "prettier", "react-hooks"],
     rules: {
         "prettier/prettier": [
             1,
@@ -101,7 +101,9 @@ module.exports = {
             {
                 ignoreTranspilerName: true
             }
-        ]
+        ],
+        "react-hooks/rules-of-hooks": "error", // Checks rules of Hooks
+        "react-hooks/exhaustive-deps": "error" // Checks effect dependencies
     },
     ignorePatterns: ["node_modules"]
 };
