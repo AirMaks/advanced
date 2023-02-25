@@ -9,3 +9,5 @@ npm-debug.log*
 .ctags
 .env
 /storybook-static
+.loki/report.html
+.loki/report.json
