@@ -8,8 +8,13 @@ i18n.use(Backend)
     .use(LanguageDetector)
     .use(initReactI18next)
     .init({
-        fallbackLng: false,
+        fallbackLng: "en",
         debug: __IS_DEV__,
+
+        interpolation: {
+            escapeValue: false // not needed for react as it escapes by default
+        },
+
         backend: {
             loadPath: "/locales/{{lng}}/{{ns}}.json"
         }

@@ -13,10 +13,9 @@ const MainPage = () => {
 
     return (
         <div>
-            {t("Привет")}
             {t("Главная страница")}
             <Button theme={ButtonTheme.OUTLINE} onClick={err}>
-                error
+                {t("Ошибка")}
             </Button>
         </div>
     );
