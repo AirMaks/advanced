@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
-import { Button, ThemeButton } from "shared/ui/Button/Button";
+import { Button, ButtonTheme } from "shared/ui/Button/Button";
 
 const MainPage = () => {
     const { t } = useTranslation("main");
@@ -15,7 +15,7 @@ const MainPage = () => {
         <div>
             {t("Привет")}
             {t("Главная страница")}
-            <Button theme={ThemeButton.OUTLINE} onClick={err}>
+            <Button theme={ButtonTheme.OUTLINE} onClick={err}>
                 error
             </Button>
         </div>
