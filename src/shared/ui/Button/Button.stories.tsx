@@ -25,6 +25,6 @@ Clear.args = {
 
 export const Outline = Template.bind({});
 Outline.args = {
-    children: "Text",
+    children: "text",
     theme: ThemeButton.OUTLINE
 };
