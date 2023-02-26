@@ -15,23 +15,20 @@ export const Modal = (props: ModalProps) => {
         [cls.opened]: isOpen
     };
     const closeHandler = useCallback(() => onClose && onClose(), [onClose]);
-    const onKeyDown = useCallback(
-        (e: KeyboardEvent) => {
+
+    useEffect(() => {
+        const onKeyDown = (e: KeyboardEvent) => {
             if (e.key === "Escape") {
                 closeHandler();
             }
-        },
-        [closeHandler]
-    );
-
-    useEffect(() => {
+        };
         if (isOpen) {
             window.addEventListener("keydown", onKeyDown);
         }
         return () => {
             window.removeEventListener("keydown", onKeyDown);
         };
-    }, [isOpen, onKeyDown]);
+    }, [isOpen, closeHandler]);
     return (
         <Portal>
             <div className={cn(cls.Modal, mods, [className])}>
