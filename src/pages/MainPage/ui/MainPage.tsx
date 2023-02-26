@@ -1,3 +1,4 @@
+import { Counter } from "entitiess/Counter";
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { Button, ButtonTheme } from "shared/ui/Button/Button";
@@ -14,6 +15,7 @@ const MainPage = () => {
     return (
         <div>
             {t("Главная страница")}
+            <Counter />
             <Button theme={ButtonTheme.OUTLINE} onClick={err}>
                 {t("Ошибка")}
             </Button>
