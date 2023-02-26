@@ -5,6 +5,7 @@ import { Navbar } from "widgets/Navbar";
 import { Sidebar } from "widgets/Sidebar/ui";
 import { Suspense, useState } from "react";
 import { Modal } from "shared/ui/Modal/Modal";
+import { ErrorBoundary } from "./providers/ErrorBoundary";
 
 const App = () => {
     const { theme, toggleTheme } = useTheme();
@@ -19,7 +20,9 @@ const App = () => {
                 <Modal isOpen={isOpen} onClose={closeHandler} />
                 <div className="content-page">
                     <Sidebar />
-                    <AppRouter />
+                    <ErrorBoundary>
+                        <AppRouter />
+                    </ErrorBoundary>
                 </div>
             </Suspense>
         </div>
