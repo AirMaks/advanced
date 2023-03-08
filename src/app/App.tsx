@@ -1,32 +1,24 @@
+import { Suspense } from "react";
 import { cn } from "shared/lib/classNames/classNames";
 import { useTheme } from "app/providers/ThemeProvider";
-import { AppRouter } from "./providers/router";
+import { AppRouter } from "app/providers/router";
 import { Navbar } from "widgets/Navbar";
-import { Sidebar } from "widgets/Sidebar/ui";
-import { Suspense, useState } from "react";
-import { Modal } from "shared/ui/Modal/Modal";
-import { ErrorBoundary } from "./providers/ErrorBoundary";
+import { Sidebar } from "widgets/Sidebar";
 
-const App = () => {
-    const { theme, toggleTheme } = useTheme();
-    const [isOpen, setIsOpen] = useState(false);
+function App() {
+    const { theme } = useTheme();
 
-    const closeHandler = () => setIsOpen(false);
     return (
         <div className={cn("app", {}, [theme])}>
             <Suspense fallback="">
-                <Navbar toggleTheme={toggleTheme} />
-                <button onClick={() => setIsOpen(true)}>Toggle</button>
-                <Modal isOpen={isOpen} onClose={closeHandler} />
+                <Navbar />
                 <div className="content-page">
                     <Sidebar />
-                    <ErrorBoundary>
-                        <AppRouter />
-                    </ErrorBoundary>
+                    <AppRouter />
                 </div>
             </Suspense>
         </div>
     );
-};
+}
 
 export default App;

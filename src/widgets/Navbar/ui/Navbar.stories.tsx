@@ -1,8 +1,7 @@
 import { ComponentStory, ComponentMeta } from "@storybook/react";
-
-import { ThemeDecorator } from "shared/config/storybook/ThemeDecorator";
 import { Theme } from "app/providers/ThemeProvider";
 import { Navbar } from "./Navbar";
+import { ThemeDecorator } from "shared/config/storybook/ThemeDecorator";
 
 export default {
     title: "widget/Navbar",
