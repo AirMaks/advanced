@@ -1,20 +1,16 @@
 import path from "path";
+
 export default {
     clearMocks: true,
     testEnvironment: "jsdom",
-    coveragePathIgnorePatterns: ["\\\\node_modules\\\\"],
     moduleFileExtensions: ["js", "jsx", "ts", "tsx", "json", "node"],
-    moduleDirectories: ["node_modules"],
-    modulePaths: ["<rootDir>src"],
-    testMatch: [
-        // для МАК ОС
-        "<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)"
-    ],
+    modulePaths: ["src"],
     rootDir: "../../",
-    setupFilesAfterEnv: ["<rootDir>config/jest/setupTests.ts"],
+    setupFilesAfterEnv: ["<rootDir>/config/jest/setupTests.ts"],
     moduleNameMapper: {
         "\\.s?css$": "identity-obj-proxy",
-        "\\.svg": path.resolve(__dirname, "jestEmptyComponent.tsx")
+        "\\.svg$": path.resolve(__dirname, "jestEmptyComponent.tsx").replace(/\\/g, "/"),
+        "^entities/(.*)$": "<rootDir>/src/entities/$1"
     },
     globals: {
         __IS_DEV__: true
