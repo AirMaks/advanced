@@ -1,12 +1,33 @@
 .Navbar {
-    width: 100%;
+    width: calc(100% - var(--sidebar-width));
+    margin-left: var(--sidebar-width);
     height: var(--navbar-height);
     background: var(--inverted-bg-color);
     display: flex;
     align-items: center;
     padding: 20px;
+    border-bottom: 1px solid var(--inverted-border-color);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    transition: width var(--transition), margin var(--transition);
 }
 
+.collapsed {
+    width: calc(100% - var(--sidebar-width-collapsed));
+    margin-left: var(--sidebar-width-collapsed);
+    background-color: var(--inverted-bg-color);
+    transition: width var(--transition), margin var(--transition);
+    
+}
+
+.Burger {
+    cursor: pointer;
+    display: block;
+    path {
+        fill: var(--inverted-primary-color);
+    }
+}
 .links {
     margin-left: auto;
 }

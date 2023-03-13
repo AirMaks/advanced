@@ -8,11 +8,12 @@
 
 .input {
     background: transparent;
-    border: none;
+    border: 1px solid var(--inverted-border-color);
+    padding: 5px;
     outline: none;
     width: 100%;
-    color: var(--primary-color);
-
+    color: var(--inverted-primary-color);
+    font: var(--font);
     &:focus {
         outline: none;
     }

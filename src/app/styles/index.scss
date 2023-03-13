@@ -3,19 +3,46 @@
 @import "themes/normal";
 @import "themes/dark";
 
+
+html {
+    overflow: hidden;
+}
+
+* {
+    font: inherit;
+}
+
 .app {
     font: var(--font-m);
-
     background: var(--bg-color);
     color: var(--primary-color);
     min-height: 100vh;
 }
 
 .content-page {
-    display: flex;
+    width: calc(100% - var(--sidebar-width));
+    margin-left: var(--sidebar-width);
+    min-height: calc(100vh);
+    position: relative;
+    z-index: 999;
+    border-left: 1px solid var(--inverted-border-color);
+    transition: width var(--transition), margin var(--transition);
+    background-color: var(--inverted-bg-color);
+    &.collapsed {
+        width: calc(100% - var(--sidebar-width-collapsed));
+        margin-left: var(--sidebar-width-collapsed);
+        border-left: 1px solid var(--inverted-border-color);
+        background-color: var(--inverted-bg-color);
+        transition: width var(--transition), margin var(--transition);
+    }
 }
 
 .page-wrapper {
-    flex-grow: 1;
     padding: 20px;
+}
+
+svg {
+    path {
+        fill: var(--inverted-primary-color);
+    }
 }

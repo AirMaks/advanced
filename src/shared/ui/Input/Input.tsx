@@ -39,7 +39,6 @@ export const Input = memo((props: InputProps) => {
 
     return (
         <div className={cn(cls.InputWrapper, {}, [className])}>
-            {placeholder && <div className={cls.placeholder}>{`${placeholder}>`}</div>}
             <div className={cls.caretWrapper}>
                 <input
                     ref={ref}
@@ -47,6 +46,7 @@ export const Input = memo((props: InputProps) => {
                     value={value}
                     onChange={onChangeHandler}
                     className={cls.input}
+                    placeholder={placeholder}
                     onFocus={onFocus}
                     onBlur={onBlur}
                     {...otherProps}

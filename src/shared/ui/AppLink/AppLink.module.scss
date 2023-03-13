@@ -1,5 +1,11 @@
 .AppLink {
     color: var(--primary-color);
+    transition: background-color var(--transition);
+
+    &:hover {
+        background-color: var(--inverted-active-bg-color);
+        transition: background-color var(--transition);
+    }
 }
 
 .primary {
@@ -8,4 +14,17 @@
 
 .secondary {
     color: var(--inverted-primary-color);
+}
+
+.active {
+    background-color: var(--inverted-active-bg-color);
+    position: relative;
+    &:before{
+        content: "";
+        height: 100%;
+        width: 3px;
+        background-color: #ffc107;
+        position: absolute;
+        left: 0;
+    }
 }

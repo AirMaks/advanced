@@ -1,13 +1,14 @@
 .Modal {
     position: fixed;
-    top: 0;
+    top: var(--navbar-height);
     bottom: 0;
     right: 0;
-    left: 0;
+    left: var(--sidebar-width);
     opacity: 0;
     pointer-events: none;
     z-index: -1;
     color: var(--primary-color);
+    transition: left var(--transition);
 }
 
 .overlay {
@@ -19,11 +20,16 @@
     justify-content: center;
 }
 
+.collapsed {
+    left: var(--sidebar-width-collapsed);
+    transition: left var(--transition);
+}
+
 .content {
     padding: 20px;
     border-radius: 12px;
-    background: var(--bg-color);
-    transition: 0.3s transform;
+    background: var(--inverted-bg-color);
+    transition: var(--transition) transform;
     transform: scale(0.5);
     max-width: 60%;
 }

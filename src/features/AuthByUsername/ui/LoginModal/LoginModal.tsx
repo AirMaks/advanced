@@ -7,10 +7,11 @@ interface LoginModalProps {
     className?: string;
     isOpen: boolean;
     onClose: () => void;
+    collapsed?: boolean;
 }
 
-export const LoginModal = ({ className, isOpen, onClose }: LoginModalProps) => (
-    <Modal className={cn(cls.LoginModal, {}, [className])} isOpen={isOpen} onClose={onClose} lazy>
+export const LoginModal = ({ className, isOpen, onClose, collapsed }: LoginModalProps) => (
+    <Modal collapsed={collapsed} className={cn(cls.LoginModal, {}, [className])} isOpen={isOpen} onClose={onClose} lazy>
         <LoginForm />
     </Modal>
 );

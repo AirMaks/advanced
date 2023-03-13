@@ -1,6 +1,6 @@
 import { cn } from "shared/lib/classNames/classNames";
 import cls from "./AppLink.module.scss";
-import { Link, LinkProps } from "react-router-dom";
+import { NavLink, LinkProps } from "react-router-dom";
 import { FC } from "react";
 
 export enum AppLinkTheme {
@@ -14,8 +14,8 @@ interface AppLinkProps extends LinkProps {
 export const AppLink: FC<AppLinkProps> = props => {
     const { to, className, children, theme, ...otherProps } = props;
     return (
-        <Link to={to} className={cn(cls.AppLink, {}, [className, cls[theme]])} {...otherProps}>
+        <NavLink to={to} {...otherProps} className={({ isActive }) => cn(cls.AppLink, { [cls.active]: isActive }, [className, cls[theme]])}>
             {children}
-        </Link>
+        </NavLink>
     );
 };
