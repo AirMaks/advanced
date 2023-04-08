@@ -5,7 +5,15 @@ module.exports = {
         es6: true,
         jest: true
     },
-    extends: ["plugin:react/recommended", "plugin:react/jsx-runtime", "standard", "eslint:recommended", "prettier", "plugin:storybook/recommended"],
+    extends: [
+        "plugin:react/recommended",
+        "plugin:react/jsx-runtime",
+        "standard",
+        "eslint:recommended",
+        "prettier",
+        "plugin:storybook/recommended",
+        "plugin:i18next/recommended"
+    ],
     parser: "@typescript-eslint/parser",
     parserOptions: {
         ecmaVersion: "latest",
@@ -28,7 +36,7 @@ module.exports = {
             version: "17.x"
         }
     },
-    plugins: ["react", "@typescript-eslint", "prettier", "react-hooks"],
+    plugins: ["react", "@typescript-eslint", "prettier", "react-hooks", "i18next"],
     rules: {
         "prettier/prettier": [
             1,
@@ -103,7 +111,8 @@ module.exports = {
             }
         ],
         "react-hooks/rules-of-hooks": "error", // Checks rules of Hooks
-        "react-hooks/exhaustive-deps": "error" // Checks effect dependencies
+        "react-hooks/exhaustive-deps": "error", // Checks effect dependencies
+        "i18next/no-literal-string": ["error", { markupOnly: true, ignoreAttribute: ["data-testid", "to"] }]
     },
     ignorePatterns: ["node_modules"]
 };

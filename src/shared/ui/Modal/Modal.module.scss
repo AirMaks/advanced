@@ -1,6 +1,9 @@
 .Modal {
     position: fixed;
-    inset: var(--navbar-height) 0 0 var(--sidebar-width);
+    top: var(--navbar-height);
+    bottom: 0;
+    right: 0;
+    left: var(--sidebar-width);
     opacity: 0;
     pointer-events: none;
     z-index: -1;

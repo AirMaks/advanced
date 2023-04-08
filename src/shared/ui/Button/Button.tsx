@@ -12,9 +12,9 @@ export enum ButtonTheme {
 }
 
 export enum ButtonSize {
-    M = "size_m",
-    L = "size_l",
-    XL = "size_xl"
+    m = "size_m",
+    l = "size_l",
+    xl = "size_xl"
 }
 
 interface LoaderOptionsProps {
@@ -47,7 +47,7 @@ export const Button: FC<ButtonProps> = props => {
     const {
         className,
         children,
-        size = ButtonSize.M,
+        size = ButtonSize.m,
         rounded,
         bold,
         small,

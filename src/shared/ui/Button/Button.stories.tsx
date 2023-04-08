@@ -1,5 +1,5 @@
 import { ComponentStory, ComponentMeta } from "@storybook/react";
-import { Button } from "./Button";
+import { Button, ButtonSize } from "./Button";
 
 export default {
     title: "shared/Button",
@@ -75,7 +75,7 @@ WithLoaderSpinner.args = {
     yellow: true,
     loader: true,
     disabled: true,
-    size: "s"
+    size: ButtonSize.m
 };
 
 export const WithLoaderDots = Template.bind({});
@@ -85,7 +85,7 @@ WithLoaderDots.args = {
     yellow: true,
     loader: true,
     disabled: true,
-    size: "s",
+    size: ButtonSize.m,
     loaderOptions: {
         loaderType: "dots",
         loaderSize: "xs"

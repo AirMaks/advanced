@@ -18,7 +18,7 @@ export const Footer = ({ className }: FooterProps) => {
                 <LangSwitcher className={cls.lang} />
             </div>
             <div>
-                © {t("Цифровизация транспорта")}, 2023&nbsp;
+                {`© ${t("Цифровизация транспорта")}, 2023`}
                 <a href="/" className={cls.license} target="_blank">
                     {t("Лицензионный договор")}
                 </a>
