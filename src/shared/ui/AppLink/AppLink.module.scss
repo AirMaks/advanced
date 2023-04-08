@@ -19,7 +19,8 @@
 .active {
     background-color: var(--inverted-active-bg-color);
     position: relative;
-    &:before{
+
+    &::before{
         content: "";
         height: 100%;
         width: 3px;

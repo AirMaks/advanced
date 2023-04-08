@@ -1,11 +1,11 @@
 .Button {
-
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
     width: fit-content; 
     line-height: 1.5;
+
     button {
         cursor: pointer;
         border: 0;
@@ -35,35 +35,42 @@
     
     .blue {
         background-color: var(--blue-bg-color);
+
         &:hover {
             background-color: var(--blue-bg-color-hover);
             transition: background-color var(--transition);
         }
     }
+
     .red {
         background-color: var(--red-bg-color);
         color: #fff;
+
         &:hover {
             background-color: var(--red-bg-color-hover);
             transition: background-color var(--transition);
         }
     }
+
     .green {
         background-color: var(--green-bg-color);
+
         &:hover {
             background-color: var(--green-bg-color-hover);
             transition: background-color var(--transition);
         }
     }
+
     .black {
         background-color: var(--black-bg-color);
-        color: #ffffff;
+        color: #fff;
     
         &:hover {
             background-color: var(--black-bg-color-hover);
             transition: background-color var(--transition);
         }
     }
+
     .grey {
         background-color: var(--grey-bg-color);
     
@@ -74,6 +81,7 @@
     }
 
 }
+
 .size_m {
     font: var(--font-m);
 }

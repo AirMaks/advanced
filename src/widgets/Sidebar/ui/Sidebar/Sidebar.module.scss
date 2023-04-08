@@ -15,9 +15,11 @@
     height: var(--navbar-height);
     display: block;
     border-bottom: 1px solid var(--inverted-border-color);
+
     svg {
         height: 60px;
         display: block;
+
         path {
             fill: var(--inverted-primary-color);
         }

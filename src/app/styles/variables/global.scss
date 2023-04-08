@@ -1,5 +1,5 @@
 :root {
-    --font-family-main: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    --font-family-main: -apple-system, BlinkMacSystemFont, "Segoe UI", roboto, "Helvetica Neue", arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     --font-size: 14px;
     --font-line: 22px;
     --font-size-s: 12px;
@@ -26,28 +26,19 @@
 
     // Цвета
     --overlay-color: rgba(0 0 0 / 60%);
-
     --transition: 0.3s;
-
     --yellow-bg-color: #ffc107;
     --yellow-bg-color-hover: #f0b609;
-
     --red-bg-color: #fc4d2e;
     --red-bg-color-hover: #e93818;
-
     --blue-bg-color: #49b7f7;
     --blue-bg-color-hover: #2aa0e4;
-    
     --green-bg-color: #27db45;
     --green-bg-color-hover: #2cc446;
-    
     --black-bg-color: #0d0e0f;
     --black-bg-color-hover: #333;
-    
     --grey-bg-color: #c7c7c7;
     --grey-bg-color-hover: #adadad;
-    
     --transparent-bg: transparent;
-
     --rounded: 4px;
 }

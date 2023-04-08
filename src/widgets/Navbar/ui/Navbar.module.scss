@@ -24,6 +24,7 @@
 .Burger {
     cursor: pointer;
     display: block;
+
     path {
         fill: var(--inverted-primary-color);
     }
@@ -32,6 +33,7 @@
 .logoutBtn {
     margin-left: auto;
     cursor: pointer;
+
     path {
         fill: var(--inverted-primary-color);
     }

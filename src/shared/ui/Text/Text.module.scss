@@ -1,9 +1,11 @@
 .Text {
     font: var(--font);
     color: var(--inverted-primary-color);
+
     &.semibold {
         font-weight: 500;
     }
+
     &.bold {
         font-weight: bold;
     }
