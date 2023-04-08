@@ -1,14 +1,18 @@
 :root {
     --bg-color: #ffffff;
+    --color: #212529;
     --primary-color: #1f92fd;
     --secondary-color: #271494;
 
     --inverted-bg-color: #fff;
     --inverted-primary-color: #212529;
+    --inverted-primary-color-rgba: 0, 0, 0;
     --inverted-secondary-color: #c2bfd3;
 
     --inverted-border-color: #dcdcdc;
     --inverted-active-bg-color: #f2f2f2;
     --inverted-footer-bg-color: #212529;
     --inverted-footer-color: #ffffff;
+    --inverted-loader-color: #333;
+    --inverted-loader-bg-color: #ccc;
 }

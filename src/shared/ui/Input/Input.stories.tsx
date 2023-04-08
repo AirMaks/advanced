@@ -11,8 +11,33 @@ export default {
 
 const Template: ComponentStory<typeof Input> = args => <Input {...args} />;
 
-export const Primary = Template.bind({});
-Primary.args = {
+export const Default = Template.bind({});
+Default.args = { value: "Roman" };
+
+export const WithoutBorder = Template.bind({});
+WithoutBorder.args = {
     placeholder: "Type text",
-    value: "123123"
+    value: "Text",
+    border: false
+};
+
+export const Squared = Template.bind({});
+Squared.args = {
+    placeholder: "Type text",
+    value: "Text",
+    rounded: false,
+    border: true
+};
+
+export const Autofocus = Template.bind({});
+Autofocus.args = {
+    placeholder: "Type text",
+    autofocus: true
+};
+
+export const FocusOutline = Template.bind({});
+FocusOutline.args = {
+    placeholder: "Type text",
+    autofocus: true,
+    focusOutline: true
 };

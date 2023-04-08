@@ -1,4 +1,8 @@
 .LangSwitcher {
-    color: var(--inverted-footer-color);
+    
     font: var(--font-s);
+
+    button {
+        color: var(--inverted-footer-color);
+    }
 }

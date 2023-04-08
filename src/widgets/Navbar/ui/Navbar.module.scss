@@ -28,8 +28,13 @@
         fill: var(--inverted-primary-color);
     }
 }
-.links {
+
+.logoutBtn {
     margin-left: auto;
+    cursor: pointer;
+    path {
+        fill: var(--inverted-primary-color);
+    }
 }
 
 .mainLink {

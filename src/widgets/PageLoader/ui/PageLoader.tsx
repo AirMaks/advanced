@@ -8,7 +8,7 @@ interface PageLoaderProps {
 export const PageLoader = ({ className }: PageLoaderProps) => {
     return (
         <div className={cn(cls.PageLoader, {}, [className])}>
-            <Loader />
+            <Loader type="dots" size="m" />
         </div>
     );
 };

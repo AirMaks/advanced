@@ -1,6 +1,7 @@
 import { cn } from "shared/lib/classNames/classNames";
 import { ButtonHTMLAttributes, FC } from "react";
 import cls from "./Button.module.scss";
+import Loader from "../Loader/Loader";
 
 export enum ButtonTheme {
     CLEAR = "clear",
@@ -16,25 +17,75 @@ export enum ButtonSize {
     XL = "size_xl"
 }
 
+interface LoaderOptionsProps {
+    loaderSize?: string;
+    loaderType?: string;
+}
+
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     className?: string;
     theme?: ButtonTheme;
     square?: boolean;
     size?: ButtonSize;
+    rounded?: boolean;
+    bold?: boolean;
+    semibold?: boolean;
+    small?: boolean;
+    w100?: boolean;
+    yellow?: boolean;
+    red?: boolean;
+    blue?: boolean;
+    green?: boolean;
+    black?: boolean;
+    grey?: boolean;
+    loader?: boolean;
+    border?: boolean;
+    loaderOptions?: LoaderOptionsProps;
 }
 
 export const Button: FC<ButtonProps> = props => {
-    const { className, children, theme, square, size = ButtonSize.M, ...otherProps } = props;
+    const {
+        className,
+        children,
+        size = ButtonSize.M,
+        rounded,
+        bold,
+        small,
+        semibold,
+        w100,
+        yellow,
+        red,
+        blue,
+        green,
+        black,
+        grey,
+        disabled,
+        loader,
+        loaderOptions,
+        ...otherProps
+    } = props;
 
     const mods: Record<string, boolean> = {
-        [cls[theme]]: true,
-        [cls.square]: square,
-        [cls[size]]: true
+        [cls[size]]: true,
+        [cls.rounded]: rounded,
+        [cls.semibold]: semibold,
+        [cls.bold]: bold,
+        [cls.small]: small,
+        [cls.yellow]: yellow,
+        [cls.red]: red,
+        [cls.blue]: blue,
+        [cls.green]: green,
+        [cls.black]: black,
+        [cls.grey]: grey,
+        [cls.disabled]: disabled
     };
 
     return (
-        <button type="button" className={cn(cls.Button, mods, [className])} {...otherProps}>
-            {children}
-        </button>
+        <div className={cn(cls.Button, { [cls.w100]: w100 }, [className])}>
+            <button className={cn("", mods, [className])} type="button" {...otherProps} disabled={disabled}>
+                {children}
+            </button>
+            {loader && <Loader size={loaderOptions?.loaderSize} type={loaderOptions?.loaderType} />}
+        </div>
     );
 };

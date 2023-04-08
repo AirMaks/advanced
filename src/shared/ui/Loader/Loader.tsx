@@ -4,9 +4,26 @@ import { FC } from "react";
 
 interface LoaderProps {
     className?: string;
+    size?: string;
+    type?: string;
 }
-const Loader: FC<LoaderProps> = ({ className }) => {
-    return <span className={cn("", {}, [cls.loader, className])}></span>;
+export const Loader: FC<LoaderProps> = ({ className, size = "s", type = "spinner" }) => {
+    return (
+        <div className={cn("", { [cls[size]]: true, [cls[type]]: true }, [className])}>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    );
 };
 
 export default Loader;

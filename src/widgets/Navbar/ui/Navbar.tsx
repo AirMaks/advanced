@@ -1,10 +1,10 @@
 import { cn } from "shared/lib/classNames/classNames";
-import { useTranslation } from "react-i18next";
-import { useCallback, useState } from "react";
-import { Button, ButtonTheme } from "shared/ui/Button/Button";
-import { LoginModal } from "features/AuthByUsername";
+import { useCallback } from "react";
 import cls from "./Navbar.module.scss";
-import BurgerIcon from "shared/assets/icons/burger.svg";
+import BurgerIcon from "shared/assets/icons/navbar/burger.svg";
+import { useDispatch } from "react-redux";
+import { userActions } from "entities/User";
+import Logout from "shared/assets/icons/navbar/logout.svg";
 
 interface NavbarProps {
     className?: string;
@@ -13,26 +13,18 @@ interface NavbarProps {
 }
 
 export const Navbar = ({ className, onToggle, collapsed }: NavbarProps) => {
-    const { t } = useTranslation();
-    const [isAuthModal, setIsAuthModal] = useState(false);
+    const dispatch = useDispatch();
 
-    const onCloseModal = useCallback(() => {
-        setIsAuthModal(false);
-    }, []);
-
-    const onShowModal = useCallback(() => {
-        setIsAuthModal(true);
-    }, []);
+    const onLogout = useCallback(() => {
+        dispatch(userActions.logout());
+    }, [dispatch]);
 
     return (
         <div className={cn(cls.Navbar, { [cls.collapsed]: collapsed }, [className])}>
             <div data-testid="sidebar-toggle" onClick={onToggle}>
                 <BurgerIcon className={cls.Burger} />
             </div>
-            <Button theme={ButtonTheme.CLEAR_INVERTED} className={cls.links} onClick={onShowModal}>
-                {t("Войти")}
-            </Button>
-            <LoginModal isOpen={isAuthModal} onClose={onCloseModal} collapsed={collapsed} />
+            <Logout width={24} height={24} className={cls.logoutBtn} onClick={onLogout} />
         </div>
     );
 };

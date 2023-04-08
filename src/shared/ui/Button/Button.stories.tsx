@@ -1,7 +1,5 @@
 import { ComponentStory, ComponentMeta } from "@storybook/react";
-import { ThemeDecorator } from "shared/config/storybook/ThemeDecorator";
-import { Theme } from "app/providers/ThemeProvider";
-import { Button, ButtonSize, ButtonTheme } from "./Button";
+import { Button } from "./Button";
 
 export default {
     title: "shared/Button",
@@ -13,81 +11,83 @@ export default {
 
 const Template: ComponentStory<typeof Button> = args => <Button {...args} />;
 
-export const Primary = Template.bind({});
-Primary.args = {
-    children: "Text"
-};
-
-export const Clear = Template.bind({});
-Clear.args = {
+export const Yellow = Template.bind({});
+Yellow.args = {
     children: "Text",
-    theme: ButtonTheme.CLEAR
+    yellow: true
 };
-
-export const ClearInverted = Template.bind({});
-ClearInverted.args = {
+export const Red = Template.bind({});
+Red.args = {
     children: "Text",
-    theme: ButtonTheme.CLEAR_INVERTED
+    red: true
 };
 
-export const Outline = Template.bind({});
-Outline.args = {
+export const Green = Template.bind({});
+Green.args = {
     children: "Text",
-    theme: ButtonTheme.OUTLINE
+    green: true
 };
 
-export const OutlineSizeL = Template.bind({});
-OutlineSizeL.args = {
+export const Blue = Template.bind({});
+Blue.args = {
     children: "Text",
-    theme: ButtonTheme.OUTLINE,
-    size: ButtonSize.L
+    blue: true
 };
-
-export const OutlineSizeXl = Template.bind({});
-OutlineSizeXl.args = {
+export const Black = Template.bind({});
+Black.args = {
     children: "Text",
-    theme: ButtonTheme.OUTLINE,
-    size: ButtonSize.XL
+    black: true
 };
 
-export const OutlineDark = Template.bind({});
-OutlineDark.args = {
+export const Grey = Template.bind({});
+Grey.args = {
     children: "Text",
-    theme: ButtonTheme.OUTLINE
+    grey: true
 };
-OutlineDark.decorators = [ThemeDecorator(Theme.DARK)];
 
-export const BackgroundTheme = Template.bind({});
-BackgroundTheme.args = {
+export const Rounded = Template.bind({});
+Rounded.args = {
     children: "Text",
-    theme: ButtonTheme.BACKGROUND
+    rounded: true,
+    yellow: true
 };
 
-export const BackgroundInverted = Template.bind({});
-BackgroundInverted.args = {
+export const FullWidth = Template.bind({});
+FullWidth.args = {
     children: "Text",
-    theme: ButtonTheme.BACKGROUND_INVERTED
+    rounded: true,
+    w100: true,
+    yellow: true
 };
 
-export const Square = Template.bind({});
-Square.args = {
-    children: ">",
-    theme: ButtonTheme.BACKGROUND_INVERTED,
-    square: true
+export const Semibold = Template.bind({});
+Semibold.args = {
+    children: "Text",
+    rounded: true,
+    yellow: true,
+    semibold: true
 };
 
-export const SquareSizeL = Template.bind({});
-SquareSizeL.args = {
-    children: ">",
-    theme: ButtonTheme.BACKGROUND_INVERTED,
-    square: true,
-    size: ButtonSize.L
+export const WithLoaderSpinner = Template.bind({});
+WithLoaderSpinner.args = {
+    children: "Text",
+    rounded: true,
+    yellow: true,
+    loader: true,
+    disabled: true,
+    size: "s"
 };
 
-export const SquareSizeXl = Template.bind({});
-SquareSizeXl.args = {
-    children: ">",
-    theme: ButtonTheme.BACKGROUND_INVERTED,
-    square: true,
-    size: ButtonSize.XL
+export const WithLoaderDots = Template.bind({});
+WithLoaderDots.args = {
+    children: "Text",
+    rounded: true,
+    yellow: true,
+    loader: true,
+    disabled: true,
+    size: "s",
+    loaderOptions: {
+        loaderType: "dots",
+        loaderSize: "xs"
+    }
 };

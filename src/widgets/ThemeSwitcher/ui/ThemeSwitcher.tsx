@@ -1,6 +1,6 @@
 import { useTheme, Theme } from "app/providers/ThemeProvider";
-import LightIcon from "shared/assets/icons/theme-light.svg";
-import DarkIcon from "shared/assets/icons/theme-dark.svg";
+import LightIcon from "shared/assets/icons/footer/theme-light.svg";
+import DarkIcon from "shared/assets/icons/footer/theme-dark.svg";
 import cls from "./ThemeSwitcher.module.scss";
 import { cn } from "shared/lib/classNames/classNames";
 

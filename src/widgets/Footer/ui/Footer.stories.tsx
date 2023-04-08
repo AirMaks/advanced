@@ -2,27 +2,29 @@ import { ComponentStory, ComponentMeta } from "@storybook/react";
 
 import { ThemeDecorator } from "shared/config/storybook/ThemeDecorator";
 import { Theme } from "app/providers/ThemeProvider";
-import { Sidebar } from "./Sidebar";
+import { StoreDecorator } from "shared/config/storybook/StoreDecorator/StoreDecorator";
+import { Footer } from "./Footer";
 
 export default {
-    title: "widgets/Sidebar",
-    component: Sidebar,
+    title: "widgets/Footer",
+    component: Footer,
+    layout: "fullscreen",
     argTypes: {
         backgroundColor: { control: "color" }
     }
-} as ComponentMeta<typeof Sidebar>;
+} as ComponentMeta<typeof Footer>;
 
-const Template: ComponentStory<typeof Sidebar> = args => <Sidebar {...args} />;
+const Template: ComponentStory<typeof Footer> = args => <Footer {...args} />;
 
 export const Light = Template.bind({});
 Light.args = {};
 Light.parameters = {
     layout: "fullscreen"
 };
-
+Light.decorators = [StoreDecorator({})];
 export const Dark = Template.bind({});
 Dark.args = {};
 Dark.parameters = {
     layout: "fullscreen"
 };
-Dark.decorators = [ThemeDecorator(Theme.DARK)];
+Dark.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({})];

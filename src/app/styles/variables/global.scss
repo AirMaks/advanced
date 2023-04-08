@@ -4,8 +4,8 @@
     --font-line: 22px;
     --font-size-s: 12px;
     --font-line-s: 20px;
-    --font-size-m: 16px;
-    --font-line-m: 24px;
+    --font-size-m: 20px;
+    --font-line-m: 28px;
     --font: var(--font-size) / var(--font-line) var(--font-family-main);
     --font-s: var(--font-size-s) / var(--font-line-s) var(--font-family-main);
     --font-m: var(--font-size-m) / var(--font-line-m) var(--font-family-main);
@@ -28,4 +28,26 @@
     --overlay-color: rgba(0 0 0 / 60%);
 
     --transition: 0.3s;
+
+    --yellow-bg-color: #ffc107;
+    --yellow-bg-color-hover: #f0b609;
+
+    --red-bg-color: #fc4d2e;
+    --red-bg-color-hover: #e93818;
+
+    --blue-bg-color: #49b7f7;
+    --blue-bg-color-hover: #2aa0e4;
+    
+    --green-bg-color: #27db45;
+    --green-bg-color-hover: #2cc446;
+    
+    --black-bg-color: #0d0e0f;
+    --black-bg-color-hover: #333;
+    
+    --grey-bg-color: #c7c7c7;
+    --grey-bg-color-hover: #adadad;
+    
+    --transparent-bg: transparent;
+
+    --rounded: 4px;
 }
