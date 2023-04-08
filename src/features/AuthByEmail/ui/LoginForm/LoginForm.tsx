@@ -2,7 +2,6 @@ import { cn } from "shared/lib/classNames/classNames";
 import { useTranslation } from "react-i18next";
 import { Button } from "shared/ui/Button/Button";
 import { Input } from "shared/ui/Input/Input";
-import { useDispatch, useSelector } from "react-redux";
 import { memo, useCallback } from "react";
 import { Text } from "shared/ui/Text/Text";
 import { loginByEmail } from "../../model/services/loginByEmail/loginByEmail";
@@ -10,6 +9,7 @@ import { loginActions } from "../../model/slice/loginSlice";
 import cls from "./LoginForm.module.scss";
 import { getLoginState } from "../../model/selectors/getLoginState/getLoginState";
 import Logo from "shared/assets/icons/sidebar/logo-long.svg";
+import { useAppDispatch, useAppSelector } from "app/providers/StoreProvider/config/store";
 
 interface LoginFormProps {
     className?: string;
@@ -17,8 +17,8 @@ interface LoginFormProps {
 
 export const LoginForm = memo(({ className }: LoginFormProps) => {
     const { t } = useTranslation();
-    const dispatch = useDispatch<any>();
-    const { email, password, error, isLoading } = useSelector(getLoginState);
+    const dispatch = useAppDispatch();
+    const { email, password, error, isLoading } = useAppSelector(getLoginState);
 
     const onChangeEmail = useCallback(
         (value: string) => {
@@ -46,12 +46,13 @@ export const LoginForm = memo(({ className }: LoginFormProps) => {
         black: true,
         disabled: isLoading
     };
+
     return (
         <div className={cn(cls.LoginForm, {}, [className])}>
             <div className={cls.modalBox}>
                 <Logo width={220} className={cls.Logo} />
                 <Text text="Войти в систему" bold middle center className={cls.text} />
-                {error && <Text text={t("Вы ввели неверный логин или пароль")} />}
+                {error && <Text color="red" text={`${t("Пользователь с такой почтой не найден")}.`} />}
                 <Input autofocus type="text" className={cls.input} placeholder={t("Введите логин")} onChange={onChangeEmail} value={email} />
                 <Input type="password" className={cls.input} placeholder={t("Введите пароль")} onChange={onChangePassword} value={password} />
                 <Button className={cls.loginBtn} {...buttonProps} onClick={onLoginClick}>

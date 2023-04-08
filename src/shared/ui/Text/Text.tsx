@@ -12,10 +12,11 @@ interface TextProps {
     center?: boolean;
     right?: boolean;
     style?: {};
+    color?: string;
 }
 
 export const Text = (props: TextProps) => {
-    const { className, text, small, middle, large, bold, semibold, center, right, style } = props;
+    const { className, text, small, middle, large, bold, semibold, center, right, style, color } = props;
 
     return (
         <>
@@ -31,7 +32,8 @@ export const Text = (props: TextProps) => {
                             [cls.middle]: middle,
                             [cls.large]: large,
                             [cls.center]: center,
-                            [cls.right]: right
+                            [cls.right]: right,
+                            [cls[color]]: true
                         },
                         [className]
                     )}>

@@ -23,6 +23,6 @@ export const loginByEmail = createAsyncThunk<User, LoginByEmailProps, { rejectVa
         return response.data;
     } catch (e) {
         console.log(e);
-        return thunkAPI.rejectWithValue("error");
+        return thunkAPI.rejectWithValue("Login error");
     }
 });
