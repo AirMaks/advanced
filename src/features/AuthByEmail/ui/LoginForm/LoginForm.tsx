@@ -20,7 +20,7 @@ export const LoginForm = memo(({ className }: LoginFormProps) => {
     const dispatch = useDispatch<any>();
     const { email, password, error, isLoading } = useSelector(getLoginState);
 
-    const onChangeUsername = useCallback(
+    const onChangeEmail = useCallback(
         (value: string) => {
             dispatch(loginActions.setEmail(value));
         },
@@ -52,7 +52,7 @@ export const LoginForm = memo(({ className }: LoginFormProps) => {
                 <Logo width={220} className={cls.Logo} />
                 <Text text="Войти в систему" bold middle center className={cls.text} />
                 {error && <Text text={t("Вы ввели неверный логин или пароль")} />}
-                <Input autofocus type="text" className={cls.input} placeholder={t("Введите логин")} onChange={onChangeUsername} value={email} />
+                <Input autofocus type="text" className={cls.input} placeholder={t("Введите логин")} onChange={onChangeEmail} value={email} />
                 <Input type="password" className={cls.input} placeholder={t("Введите пароль")} onChange={onChangePassword} value={password} />
                 <Button className={cls.loginBtn} {...buttonProps} onClick={onLoginClick}>
                     {t("Войти")}

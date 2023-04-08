@@ -6,7 +6,7 @@ import { Navbar } from "widgets/Navbar";
 import { Sidebar } from "widgets/Sidebar";
 import { Footer } from "widgets/Footer";
 import { useDispatch, useSelector } from "react-redux";
-import { LoginForm } from "features/AuthByUsername/ui/LoginForm/LoginForm";
+import { LoginForm } from "features/AuthByEmail/ui/LoginForm/LoginForm";
 import { getUserAuthData, userActions } from "entities/User";
 
 function App() {
