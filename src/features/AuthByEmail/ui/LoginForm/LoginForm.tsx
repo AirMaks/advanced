@@ -5,20 +5,31 @@ import { Input } from "shared/ui/Input/Input";
 import { memo, useCallback } from "react";
 import { Text } from "shared/ui/Text/Text";
 import { loginByEmail } from "../../model/services/loginByEmail/loginByEmail";
-import { loginActions } from "../../model/slice/loginSlice";
+import { loginActions, loginReducer } from "../../model/slice/loginSlice";
 import cls from "./LoginForm.module.scss";
-import { getLoginState } from "../../model/selectors/getLoginState/getLoginState";
 import Logo from "shared/assets/icons/sidebar/logo-long.svg";
 import { useAppDispatch, useAppSelector } from "app/providers/StoreProvider/config/store";
+import { getLoginEmail } from "../../model/selectors/getLoginEmail";
+import { getLoginPassword } from "../..//model/selectors/getLoginPassword";
+import { getLoginError } from "../../model/selectors/getLoginError";
+import { DynamicModuleLoader, ReducersList } from "shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
+import { getLoginIsLoading } from "features/AuthByEmail/model/selectors/getLoginIsLoading";
 
 interface LoginFormProps {
     className?: string;
 }
 
+const initialReducers: ReducersList = {
+    loginForm: loginReducer
+};
+
 export const LoginForm = memo(({ className }: LoginFormProps) => {
     const { t } = useTranslation();
     const dispatch = useAppDispatch();
-    const { email, password, error, isLoading } = useAppSelector(getLoginState);
+    const email = useAppSelector(getLoginEmail);
+    const password = useAppSelector(getLoginPassword);
+    const error = useAppSelector(getLoginError);
+    const isLoading = useAppSelector(getLoginIsLoading);
 
     const onChangeEmail = useCallback(
         (value: string) => {
@@ -48,17 +59,19 @@ export const LoginForm = memo(({ className }: LoginFormProps) => {
     };
 
     return (
-        <div className={cn(cls.LoginForm, {}, [className])}>
-            <div className={cls.modalBox}>
-                <Logo width={220} className={cls.Logo} />
-                <Text text="Войти в систему" bold middle center className={cls.text} />
-                {error && <Text color="red" text={`${t("Пользователь с такой почтой не найден")}.`} />}
-                <Input autofocus type="text" className={cls.input} placeholder={t("Введите логин")} onChange={onChangeEmail} value={email} />
-                <Input type="password" className={cls.input} placeholder={t("Введите пароль")} onChange={onChangePassword} value={password} />
-                <Button className={cls.loginBtn} {...buttonProps} onClick={onLoginClick}>
-                    {t("Войти")}
-                </Button>
+        <DynamicModuleLoader removeAfterUnmount reducers={initialReducers}>
+            <div className={cn(cls.LoginForm, {}, [className])}>
+                <div className={cls.modalBox}>
+                    <Logo width={220} className={cls.Logo} />
+                    <Text text="Войти в систему" bold middle center className={cls.text} />
+                    {error && <Text color="red" text={`${t(error)}.`} />}
+                    <Input autofocus type="text" className={cls.input} placeholder={t("Введите логин")} onChange={onChangeEmail} value={email} />
+                    <Input type="password" className={cls.input} placeholder={t("Введите пароль")} onChange={onChangePassword} value={password} />
+                    <Button className={cls.loginBtn} {...buttonProps} onClick={onLoginClick}>
+                        {t("Войти")}
+                    </Button>
+                </div>
             </div>
-        </div>
+        </DynamicModuleLoader>
     );
 });
