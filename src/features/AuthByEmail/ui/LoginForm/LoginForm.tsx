@@ -63,8 +63,8 @@ export const LoginForm = memo(({ className }: LoginFormProps) => {
             <div className={cn(cls.LoginForm, {}, [className])}>
                 <div className={cls.modalBox}>
                     <Logo width={220} className={cls.Logo} />
-                    <Text text="Войти в систему" bold middle center className={cls.text} />
-                    {error && <Text color="red" text={`${t(error)}.`} />}
+                    <Text text={t("Войти в систему")} bold middle center className={cls.text} />
+                    {error && <Text color="red" text={`${t("Ошибка при логине", { error })}.`} />}
                     <Input autofocus type="text" className={cls.input} placeholder={t("Введите логин")} onChange={onChangeEmail} value={email} />
                     <Input type="password" className={cls.input} placeholder={t("Введите пароль")} onChange={onChangePassword} value={password} />
                     <Button className={cls.loginBtn} {...buttonProps} onClick={onLoginClick}>
