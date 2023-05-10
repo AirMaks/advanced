@@ -27,8 +27,8 @@
     position: relative;
     z-index: 3;
     width: 100%;
-    border: 1px solid #dcdcdc;
-    background-color: #fff;
+    border: 1px solid var(--inverted-border-color);
+    background-color: var(--inverted-bg-color);
     border-radius: 10px;
     box-shadow: 0 20px 40px 0 rgb(0 0 0 / 50%);
     margin-bottom: 50px;
@@ -48,10 +48,26 @@
 .input {
     padding: 5px;
     margin-top: 10px;
+    background-color: var(--inverted-bg-color);
+    caret-color: var(--inverted-primary-color);
+
+    &:autofill,
+    &:autofill:hover,
+    &:autofill:focus {
+        box-shadow: 0 0 0 30px var(--inverted-bg-color) inset !important;
+        background-color: var(--inverted-bg-color) !important;
+        -webkit-text-fill-color: var(--inverted-primary-color) !important;
+    }
+}
+
+svg {
+    path {
+        fill: var(--inverted-primary-color);
+    }
 }
 
 .text {
     font-size: 18px;
-    color: #424242;
+    color: var(--inverted-primary-color);
     margin-bottom: 20px;
 }

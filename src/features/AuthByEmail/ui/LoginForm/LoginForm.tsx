@@ -14,6 +14,7 @@ import { getLoginPassword } from "../..//model/selectors/getLoginPassword";
 import { getLoginError } from "../../model/selectors/getLoginError";
 import { DynamicModuleLoader, ReducersList } from "shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
 import { getLoginIsLoading } from "features/AuthByEmail/model/selectors/getLoginIsLoading";
+import { useTheme } from "app/providers/ThemeProvider";
 
 interface LoginFormProps {
     className?: string;
@@ -30,7 +31,7 @@ export const LoginForm = memo(({ className }: LoginFormProps) => {
     const password = useAppSelector(getLoginPassword);
     const error = useAppSelector(getLoginError);
     const isLoading = useAppSelector(getLoginIsLoading);
-
+    const { theme } = useTheme();
     const onChangeEmail = useCallback(
         (value: string) => {
             dispatch(loginActions.setEmail(value));
@@ -60,7 +61,7 @@ export const LoginForm = memo(({ className }: LoginFormProps) => {
 
     return (
         <DynamicModuleLoader removeAfterUnmount reducers={initialReducers}>
-            <div className={cn(cls.LoginForm, {}, [className])}>
+            <div className={cn(cls.LoginForm, {}, [className, theme])}>
                 <div className={cls.modalBox}>
                     <Logo width={220} className={cls.Logo} />
                     <Text text={t("Войти в систему")} bold middle center className={cls.text} />
