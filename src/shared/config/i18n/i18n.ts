@@ -10,14 +10,10 @@ i18n.use(Backend)
     .init({
         fallbackLng: "en",
         debug: __IS_DEV__,
-
-        interpolation: {
-            escapeValue: false // not needed for react as it escapes by default
-        },
-
         backend: {
             loadPath: "/locales/{{lng}}/{{ns}}.json"
-        }
+        },
+        appendNamespaceToMissingKey: true
     });
 
 export default i18n;
