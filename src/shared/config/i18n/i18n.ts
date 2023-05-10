@@ -12,8 +12,7 @@ i18n.use(Backend)
         debug: __IS_DEV__,
         backend: {
             loadPath: "/locales/{{lng}}/{{ns}}.json"
-        },
-        appendNamespaceToMissingKey: true
+        }
     });
 
 export default i18n;
