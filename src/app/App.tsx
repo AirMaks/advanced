@@ -22,10 +22,12 @@ function App() {
     }, [dispatch]);
 
     if (!localStorage.getItem("token") && !authData) {
-        return <>
-            <LoginForm />
-            <Footer />
-        </>
+        return (
+            <>
+                <LoginForm />
+                <Footer />
+            </>
+        );
     }
     return (
         <div className={cn("app", {}, [theme])}>
