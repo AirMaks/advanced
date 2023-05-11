@@ -9,11 +9,11 @@ import { loginActions, loginReducer } from "../../model/slice/loginSlice";
 import cls from "./LoginForm.module.scss";
 import Logo from "shared/assets/icons/sidebar/logo-long.svg";
 import { useAppDispatch, useAppSelector } from "app/providers/StoreProvider/config/store";
-import { getLoginEmail } from "../../model/selectors/getLoginEmail";
-import { getLoginPassword } from "../..//model/selectors/getLoginPassword";
-import { getLoginError } from "../../model/selectors/getLoginError";
+import { getLoginEmail } from "../../model/selectors/getLoginEmail/getLoginEmail";
+import { getLoginPassword } from "../../model/selectors/getLoginPassword/getLoginPassword";
+import { getLoginError } from "../../model/selectors/getLoginError/getLoginError";
 import { DynamicModuleLoader, ReducersList } from "shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
-import { getLoginIsLoading } from "features/AuthByEmail/model/selectors/getLoginIsLoading";
+import { getLoginIsLoading } from "features/AuthByEmail/model/selectors/getLoginIsLoading/getLoginIsLoading";
 import { useTheme } from "app/providers/ThemeProvider";
 
 interface LoginFormProps {

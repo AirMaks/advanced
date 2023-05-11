@@ -16,9 +16,9 @@ export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
                         {
                             locales: ["en", "ru"],
                             keyAsDefaultValue: true,
-                            saveMissing: true, // save any missing translations to the translation file
-                            discardOldKeys: false, // removes translation keys that are no longer used in the code
-                            removeUnusedKeys: false, // removes translation keys that have never been used in the code
+                            saveMissing: false, // save any missing translations to the translation file
+                            discardOldKeys: true, // removes translation keys that are no longer used in the code
+                            removeUnusedKeys: true, // removes translation keys that have never been used in the code
                             outputPath: "public/locales/{{locale}}/{{ns}}.json"
                         }
                     ]
