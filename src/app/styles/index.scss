@@ -31,13 +31,11 @@ body {
     z-index: 999;
     border-left: 1px solid var(--inverted-border-color);
     transition: width var(--transition), margin var(--transition);
-    background-color: var(--inverted-bg-color);
+    background-color: var(--inverted-content-bg-color);
 
     &.collapsed {
         width: calc(100% - var(--sidebar-width-collapsed));
         margin-left: var(--sidebar-width-collapsed);
-        border-left: 1px solid var(--inverted-border-color);
-        background-color: var(--inverted-bg-color);
         transition: width var(--transition), margin var(--transition);
     }
 }
