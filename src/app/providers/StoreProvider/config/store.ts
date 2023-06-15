@@ -1,7 +1,7 @@
 import { configureStore, ReducersMapObject } from "@reduxjs/toolkit";
 import { userReducer } from "entities/User";
 import { StateSchema } from "./StateSchema";
-import { TypedUseSelectorHook, useDispatch, useSelector } from "react-redux";
+import { TypedUseSelectorHook, useSelector } from "react-redux";
 import { createReducerManager } from "./reducerManager";
 
 export function createReduxStore(initialState?: StateSchema, asyncReducers?: ReducersMapObject<StateSchema>) {
@@ -23,7 +23,6 @@ export function createReduxStore(initialState?: StateSchema, asyncReducers?: Red
 
 const store = createReduxStore();
 type RootState = ReturnType<typeof store.getState>;
-type AppDispatch = typeof store.dispatch;
 
-export const useAppDispatch = () => useDispatch<AppDispatch>();
+export type AppDispatch = ReturnType<typeof createReduxStore>["dispatch"];
 export const useAppSelector: TypedUseSelectorHook<RootState> = useSelector;

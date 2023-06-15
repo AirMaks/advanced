@@ -1,0 +1,21 @@
+.item {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    font-size: 14px;
+    line-height: 14px;
+    padding-left: 24px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+
+}
+
+.link {
+    margin-left: 22px;
+    opacity: 1;
+    display: block;
+}
+
+.icon {
+    fill: var(--inverted-primary-color);
+}

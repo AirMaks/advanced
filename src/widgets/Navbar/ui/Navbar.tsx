@@ -1,10 +1,12 @@
 import { cn } from "shared/lib/classNames/classNames";
-import { useCallback } from "react";
+import { memo, useCallback } from "react";
 import cls from "./Navbar.module.scss";
 import BurgerIcon from "shared/assets/icons/navbar/burger.svg";
 import { useDispatch } from "react-redux";
 import { userActions } from "entities/User";
-import Logout from "shared/assets/icons/navbar/logout.svg";
+import LogoutIcon from "shared/assets/icons/navbar/logout.svg";
+import ProfileIcon from "shared/assets/icons/navbar/profile.svg";
+import { NavLink } from "react-router-dom";
 
 interface NavbarProps {
     className?: string;
@@ -12,7 +14,7 @@ interface NavbarProps {
     collapsed?: boolean;
 }
 
-export const Navbar = ({ className, onToggle, collapsed }: NavbarProps) => {
+export const Navbar = memo(({ className, onToggle, collapsed }: NavbarProps) => {
     const dispatch = useDispatch();
 
     const onLogout = useCallback(() => {
@@ -24,7 +26,11 @@ export const Navbar = ({ className, onToggle, collapsed }: NavbarProps) => {
             <div data-testid="sidebar-toggle" onClick={onToggle}>
                 <BurgerIcon className={cls.Burger} />
             </div>
-            <Logout width={24} height={24} className={cls.logoutBtn} onClick={onLogout} />
+            <NavLink to={"/profile"} className={cls.profileLink}>
+                <ProfileIcon width={20} height={20} />
+                <div>{"mainModule.ru"}</div>
+            </NavLink>
+            <LogoutIcon width={24} height={24} className={cls.logoutBtn} onClick={onLogout} />
         </div>
     );
-};
+});

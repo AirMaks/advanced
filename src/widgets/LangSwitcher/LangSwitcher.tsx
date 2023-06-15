@@ -2,11 +2,12 @@ import { cn } from "shared/lib/classNames/classNames";
 import { useTranslation } from "react-i18next";
 import { Button } from "shared/ui/Button/Button";
 import cls from "./LangSwitcher.module.scss";
+import { memo } from "react";
 interface LangSwitcherProps {
     className?: string;
 }
 
-export const LangSwitcher = ({ className }: LangSwitcherProps) => {
+export const LangSwitcher = memo(({ className }: LangSwitcherProps) => {
     const { t, i18n } = useTranslation();
 
     const toggle = async () => {
@@ -18,4 +19,4 @@ export const LangSwitcher = ({ className }: LangSwitcherProps) => {
             {t("Короткий язык")}
         </Button>
     );
-};
+});

@@ -3,12 +3,13 @@ import { useTranslation } from "react-i18next";
 import cls from "./Footer.module.scss";
 import { ThemeSwitcher } from "widgets/ThemeSwitcher";
 import { LangSwitcher } from "widgets/LangSwitcher/LangSwitcher";
+import { memo } from "react";
 
 interface FooterProps {
     className?: string;
 }
 
-export const Footer = ({ className }: FooterProps) => {
+export const Footer = memo(({ className }: FooterProps) => {
     const { t } = useTranslation();
 
     return (
@@ -25,4 +26,4 @@ export const Footer = ({ className }: FooterProps) => {
             </div>
         </div>
     );
-};
+});

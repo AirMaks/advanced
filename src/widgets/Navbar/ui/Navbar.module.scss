@@ -31,7 +31,6 @@
 }
 
 .logoutBtn {
-    margin-left: auto;
     cursor: pointer;
 
     path {
@@ -41,4 +40,30 @@
 
 .mainLink {
     margin-right: 15px;
+}
+
+.profileLink {
+    margin-left: auto;
+    margin-right: 60px;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+
+    > div {
+        font-size: 14px;
+        color: var(--inverted-primary-color);
+    }
+
+    svg {
+        display: block;
+        margin-right: 10px;
+
+        path {
+            fill: var(--inverted-primary-color);
+        }
+
+        ellipse {
+            fill: var(--inverted-primary-color);
+        }
+    }
 }

@@ -1,5 +1,5 @@
 import { cn } from "shared/lib/classNames/classNames";
-import { ButtonHTMLAttributes, FC } from "react";
+import { ButtonHTMLAttributes, ReactNode } from "react";
 import cls from "./Button.module.scss";
 import Loader from "../Loader/Loader";
 
@@ -41,9 +41,10 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     loader?: boolean;
     border?: boolean;
     loaderOptions?: LoaderOptionsProps;
+    children: ReactNode;
 }
 
-export const Button: FC<ButtonProps> = props => {
+export const Button = (props: ButtonProps) => {
     const {
         className,
         children,

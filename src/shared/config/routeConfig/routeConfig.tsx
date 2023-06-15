@@ -1,6 +1,7 @@
 import { RouteProps } from "react-router-dom";
 import { MainPage } from "pages/MainPage";
 import { NotFoundPage } from "pages/NotFoundPage";
+import { ProfilePage } from "pages/ProfilePage";
 
 export enum AppRoutes {
     MAIN = "main",
@@ -20,6 +21,8 @@ export enum AppRoutes {
     MAP_OBJECTS = "map-objects",
     ROLES = "roles",
     REPORTS = "reports",
+
+    PROFILE = "profile",
     NOT_FOUND = "not_found"
 }
 
@@ -41,6 +44,9 @@ export const RoutePath: Record<AppRoutes, string> = {
     [AppRoutes.MAP_OBJECTS]: "/map-objects",
     [AppRoutes.ROLES]: "/roles",
     [AppRoutes.REPORTS]: "/reports",
+
+    [AppRoutes.PROFILE]: "/profile",
+
     [AppRoutes.NOT_FOUND]: "*"
 };
 
@@ -112,6 +118,10 @@ export const routeConfig: Record<AppRoutes, RouteProps> = {
     [AppRoutes.REPORTS]: {
         path: RoutePath.reports,
         element: <></>
+    },
+    [AppRoutes.PROFILE]: {
+        path: RoutePath.profile,
+        element: <ProfilePage />
     },
     [AppRoutes.NOT_FOUND]: {
         path: RoutePath.not_found,
