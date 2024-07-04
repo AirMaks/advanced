@@ -1,4 +1,4 @@
-import { cn } from "shared/lib/classNames/classNames";
+import cn from "classnames";
 import { ReactNode, useCallback, useEffect, useRef, useState, MouseEvent } from "react";
 import { Portal } from "shared/ui/Portal/Portal";
 import { useTheme } from "app/providers/ThemeProvider";

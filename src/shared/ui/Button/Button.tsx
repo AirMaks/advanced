@@ -1,4 +1,4 @@
-import { cn } from "shared/lib/classNames/classNames";
+import cn from "classnames";
 import { ButtonHTMLAttributes, ReactNode } from "react";
 import cls from "./Button.module.scss";
 import Loader from "../Loader/Loader";

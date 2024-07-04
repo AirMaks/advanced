@@ -1,4 +1,4 @@
-import { cn } from "shared/lib/classNames/classNames";
+import cn from "classnames";
 import cls from "./NotFoundPage.module.scss";
 import { useTranslation } from "react-i18next";
 

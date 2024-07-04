@@ -1,4 +1,4 @@
-import { cn } from "shared/lib/classNames/classNames";
+import cn from "classnames";
 import cls from "./PageLoader.module.scss";
 import Loader from "shared/ui/Loader/Loader";
 

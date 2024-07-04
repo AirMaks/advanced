@@ -1,4 +1,4 @@
-import { cn } from "shared/lib/classNames/classNames";
+import cn from "classnames";
 import { useTranslation } from "react-i18next";
 import { Button } from "shared/ui/Button/Button";
 import { Input } from "shared/ui/Input/Input";
@@ -15,7 +15,8 @@ import { DynamicModuleLoader, ReducersList } from "shared/lib/components/Dynamic
 import { getLoginIsLoading } from "features/AuthByEmail/model/selectors/getLoginIsLoading/getLoginIsLoading";
 import { useTheme } from "app/providers/ThemeProvider";
 import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch";
-import { useAppSelector } from "app/providers/StoreProvider/config/store";
+import { useSelector } from "react-redux";
+// import { useAppSelector } from "app/providers/StoreProvider/config/store";
 
 interface LoginFormProps {
     className?: string;
@@ -28,10 +29,10 @@ const initialReducers: ReducersList = {
 export const LoginForm = memo(({ className }: LoginFormProps) => {
     const { t } = useTranslation();
     const dispatch = useAppDispatch();
-    const email = useAppSelector(getLoginEmail);
-    const password = useAppSelector(getLoginPassword);
-    const error = useAppSelector(getLoginError);
-    const isLoading = useAppSelector(getLoginIsLoading);
+    const email = useSelector(getLoginEmail);
+    const password = useSelector(getLoginPassword);
+    const error = useSelector(getLoginError);
+    const isLoading = useSelector(getLoginIsLoading);
     const { theme } = useTheme();
     const onChangeEmail = useCallback(
         (value: string) => {

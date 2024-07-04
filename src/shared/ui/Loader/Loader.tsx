@@ -1,4 +1,4 @@
-import { cn } from "shared/lib/classNames/classNames";
+import cn from "classnames";
 import cls from "./Loader.module.scss";
 import { FC } from "react";
 

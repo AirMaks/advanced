@@ -33,8 +33,6 @@
     min-height: calc(100vh - var(--navbar-height));
 }
 
-
-
 .collapseBtn {
     position: absolute;
     right: -32px;
@@ -44,6 +42,5 @@
 .items {
     display: flex;
     flex-direction: column;
-    
-}
 
+}

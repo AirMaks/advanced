@@ -1,4 +1,4 @@
-import { cn } from "shared/lib/classNames/classNames";
+import cn from "classnames";
 import cls from "./AppLink.module.scss";
 import { NavLink, LinkProps } from "react-router-dom";
 import { ReactNode, memo } from "react";

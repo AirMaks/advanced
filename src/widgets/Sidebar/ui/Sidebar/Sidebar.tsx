@@ -1,4 +1,4 @@
-import { cn } from "shared/lib/classNames/classNames";
+import cn from "classnames";
 import cls from "./Sidebar.module.scss";
 import { NavLink } from "react-router-dom";
 import Logo from "shared/assets/icons/sidebar/logo-long.svg";

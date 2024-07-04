@@ -1,4 +1,4 @@
-import { cn } from "shared/lib/classNames/classNames";
+import cn from "classnames";
 import cls from "./PageError.module.scss";
 import { Button } from "shared/ui/Button/Button";
 import { useTranslation } from "react-i18next";

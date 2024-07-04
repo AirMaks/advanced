@@ -1,13 +1,11 @@
-import { useTranslation } from "react-i18next";
+import { BugButton } from "app/providers/ErrorBoundary";
 import { Input } from "shared/ui/Input/Input";
-import { Text } from "shared/ui/Text/Text";
 
 const MainPage = () => {
-    const { t } = useTranslation();
     return (
         <>
-            <Text text={t("Главная страница")} large />
             <Input placeholder="введите" focusOutline={true} />
+            <BugButton />
         </>
     );
 };
