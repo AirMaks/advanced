@@ -1,6 +1,7 @@
 import webpack from "webpack";
 import { BuildOptions } from "./types/config";
 import { buildCssLoader } from "./loaders/buildCssLoader";
+import ReactRefreshTypeScript from "react-refresh-typescript";
 
 export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
     const babelLoader = {
@@ -9,27 +10,20 @@ export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
         use: {
             loader: "babel-loader",
             options: {
-                presets: ["@babel/preset-env"],
-                plugins: [
-                    [
-                        "i18next-extract",
-                        {
-                            locales: ["en", "ru"],
-                            keyAsDefaultValue: true,
-                            saveMissing: false, // save any missing translations to the translation file
-                            discardOldKeys: true, // removes translation keys that are no longer used in the code
-                            removeUnusedKeys: true, // removes translation keys that have never been used in the code
-                            outputPath: "public/locales/{{locale}}/{{ns}}.json"
-                        }
-                    ]
-                ]
+                presets: ["@babel/preset-env"]
             }
         }
     };
 
     const typescriptLoader = {
         test: /\.tsx?$/,
-        use: "ts-loader",
+        use: [
+            {
+                loader: "ts-loader",
+                options: { transpileOnly: true }
+            }
+        ],
+
         exclude: "/node_modules/"
     };
 
@@ -45,5 +39,21 @@ export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
 
     const cssLoader = buildCssLoader(isDev);
 
-    return [svgLoader, fileLoader, babelLoader, typescriptLoader, cssLoader];
+    const reactRefreshLoader = {
+        test: /\.[t]sx?$/,
+        exclude: /node_modules/,
+        use: [
+            {
+                loader: "ts-loader",
+                options: {
+                    getCustomTransformers: () => ({
+                        before: [ReactRefreshTypeScript()].filter(Boolean)
+                    }),
+                    transpileOnly: true
+                }
+            }
+        ]
+    };
+
+    return [svgLoader, fileLoader, babelLoader, typescriptLoader, cssLoader, reactRefreshLoader];
 }

@@ -6,10 +6,13 @@ export function buildDevServer(options: BuildOptions): DevServerConfiguration {
         port: options.port,
         open: false,
         historyApiFallback: true,
+        client: {
+            overlay: false
+        },
         host: "0.0.0.0",
         proxy: {
             "/api": {
-                target: "https://test.spa.eam.austria.smprojects.ru",
+                target: "https://test.api.nk.africa.ctprojects.ru",
                 secure: false,
                 changeOrigin: true
             }
