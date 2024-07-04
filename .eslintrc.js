@@ -24,7 +24,8 @@ module.exports = {
     },
     globals: {
         JSX: true,
-        __IS_DEV__: true
+        __IS_DEV__: true,
+        __API__: true
     },
     settings: {
         "import/resolver": {
@@ -112,7 +113,9 @@ module.exports = {
         ],
         "react-hooks/rules-of-hooks": "error", // Checks rules of Hooks
         "react-hooks/exhaustive-deps": "error", // Checks effect dependencies
-        "i18next/no-literal-string": ["error", { markupOnly: true, ignoreAttribute: ["data-*", "to"] }]
+        "no-param-reassign": "off",
+        "i18next/no-literal-string": ["error", { markupOnly: true, ignoreAttribute: ["data-*", "to"] }],
+        "no-literal-string": 0
     },
     ignorePatterns: ["node_modules"]
 };

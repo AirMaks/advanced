@@ -13,6 +13,7 @@ export default {
         "^entities/(.*)$": "<rootDir>/src/entities/$1"
     },
     globals: {
-        __IS_DEV__: true
+        __IS_DEV__: true,
+        __API__: true
     }
 };
