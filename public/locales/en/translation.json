@@ -8,5 +8,6 @@
   "Ошибка при логине": "{{error}}",
   "Профиль": "Профиль",
   "Цифровизация транспорта": "Digitalization of transport",
-  "Уведомления": "Notifications"
+  "Уведомления": "Notifications",
+  "Выбросить ошибку": "Throw error"
 }
