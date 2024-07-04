@@ -1,4 +1,4 @@
-import { cn } from "shared/lib/classNames/classNames";
+import cn from "classnames";
 import { useTranslation } from "react-i18next";
 import { Button } from "shared/ui/Button/Button";
 import cls from "./LangSwitcher.module.scss";
